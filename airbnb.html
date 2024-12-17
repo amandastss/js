@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <main>
+        <form action="#">
+            <fieldset>
+                <legend>Faça sua Reserva!</legend>
+                <p>
+                    <label for="preco">Preço</label>
+                    <input type="number" id="preco">
+                </p>
+                <p>
+                    <label for="qtd">Quantidade de diárias</label>
+                    <input type="number" id="qtd">
+                </p>
+                <p>
+                    <label for="taxa">Taxa de Limpeza</label>
+                    <input type="number" id="taxa">
+                </p>
+                <p id="envio">
+                    <input type="button" value="Reservar" id="btn-enviar">
+                </p>
+                <div id="total">
+          
+                </div>
+            </fieldset>
+        </form>
+       
+    </main>
+    <script>
+        
+        let btn = document.getElementById("btn-enviar");
+
+        btn.addEventListener("click", function (e) {
+          let preco = document.getElementById("preco").value;
+          let qtd = document.getElementById("qtd").value;
+          let taxa = document.getElementById("taxa").value;
+          console.log(preco, qtd, taxa);
+          let total = ((preco * qtd )+ parseFloat(taxa)) ;     
+          console.log(total)  
+          let mensagem = document.getElementById ("total");
+          mensagem.innerText = "  Valor Total: R$: " + total ;
+         });
+          
+   
+    </script>
+    <style>
+        html{
+            display: flex;
+            justify-content: center;
+            font-size: larger;
+            
+        }
+        legend{
+            font-size: xx-large;
+        }
+        fieldset{
+            border-radius: 2vw ;
+            padding: 2vw 2vw 8vw 2vw;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        }
+        form fieldset p#envio input{
+            background-color: rgb(211, 58, 109);
+            border: none;
+            padding: 15px;
+            border-radius: 1vw;
+            color: white;
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+          
+            
+        }
+        div#total{
+            box-shadow: 2px 2px 2px 1px  rgb(211, 58, 109);
+            font-size: x-large;
+        }
+    </style>
+  
+</body>
+
+</html>
